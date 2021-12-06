@@ -52,7 +52,7 @@ app.post('/students', async (req, res) => {
       if(Object.keys(req.body).length === 3){
         if(req.body.age > 0){
           const student = await Student.create(req.body);
-          res.status(202).json(student);
+          res.status(201).json({"message": "created"});
         }else {
           res.status(400).json({"message": "age should be a positive number"});
         }
